@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="azure-sdk-for-c-sdk">
+      <UniqueIdentifier>{5311a2af-feee-4cf2-966d-d70f4a1fd93e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="azure-sdk-for-c-sdk\src">
+      <UniqueIdentifier>{e395d0b8-24d3-41cb-af4d-61ce667b428c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="azure-sdk-for-c-sdk\inc">
+      <UniqueIdentifier>{f8669f1c-8c1b-4e6e-a20a-d8794ff627a6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="HubBlobUpload.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_aad.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_context.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_credential_client_secret.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_credential_token.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_pipeline.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_logging.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_retry.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_request.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_response.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\iot\hub\src\az_iot_hub_client.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_builder.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_parser.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_pointer.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_string.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_token.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_log.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_precondition.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_span.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_spinlock.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\storage\blobs\src\az_storage_blobs_blob_client.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\iot\common\src\az_iot_common.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\platform\win32\src\az_win32.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\platform\http_client\curl\src\az_curl.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\azure-sdk-for-c\sdk\iot\hub\src\az_iot_hub_client_sas.c">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClCompile>
+    <ClCompile Include="sas.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_hex_private.h">
+      <Filter>azure-sdk-for-c-sdk\src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_config.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_context.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_credentials.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_http.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_http_transport.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\iot\hub\inc\az_iot_hub_client.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_json.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_log.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_platform.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_precondition.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_result.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_span.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_version.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\iot\common\inc\az_iot_common.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\iot\common\inc\az_iot_common_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\storage\blobs\inc\az_storage_blobs.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_aad_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_credential_token_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_span_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_string_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_logging_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_header_validation_private.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_config_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_credentials_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_http_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_log_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_precondition_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_retry_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_span_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_spinlock_internal.h">
+      <Filter>azure-sdk-for-c-sdk\inc</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

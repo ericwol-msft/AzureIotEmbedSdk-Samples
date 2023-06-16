@@ -29,26 +29,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -81,6 +81,12 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Label="Vcpkg" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <VcpkgInstalledDir>
+    </VcpkgInstalledDir>
+    <VcpkgTriplet>x64-windows-static</VcpkgTriplet>
+    <VcpkgConfiguration>$(Configuration)</VcpkgConfiguration>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -115,13 +121,14 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions);CURL_STATICLIB</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Repos\AzureIotEmbedSdk-HubBlobUpload\azure-sdk-for-c\sdk\core\az_core\internal;C:\Repos\AzureIotEmbedSdk-HubBlobUpload\azure-sdk-for-c\sdk\storage\blobs\inc;C:\Repos\AzureIotEmbedSdk-HubBlobUpload\azure-sdk-for-c\sdk\iot\hub\inc;C:\Repos\AzureIotEmbedSdk-HubBlobUpload\azure-sdk-for-c\sdk\iot\common\inc;C:\Repos\AzureIotEmbedSdk-HubBlobUpload\azure-sdk-for-c\sdk\core\az_core\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\azure-sdk-for-c\sdk\inc;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>libcurl-d.lib;libssl.lib;libcrypto.lib;Ws2_32.Lib;Wldap32.Lib;Crypt32.Lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -141,69 +148,48 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_aad.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_context.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_credential_client_secret.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_credential_token.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_pipeline.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_logging.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_retry.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_request.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_response.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_builder.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_parser.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_pointer.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_string.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_token.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_log.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_precondition.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_span.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_spinlock.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\iot\common\src\az_iot_common.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\iot\hub\src\az_iot_hub_client.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\iot\hub\src\az_iot_hub_client_sas.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\platform\http_client\curl\src\az_curl.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\platform\win32\src\az_win32.c" />
-    <ClCompile Include="..\azure-sdk-for-c\sdk\storage\blobs\src\az_storage_blobs_blob_client.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_base64.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_context.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_pipeline.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_policy.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_policy_logging.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_policy_retry.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_request.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_response.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_json_reader.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_json_token.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_json_writer.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_log.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_precondition.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\core\az_span.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_common.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_c2d.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_commands.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_methods.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_properties.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_sas.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_telemetry.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_hub_client_twin.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_provisioning_client.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\iot\az_iot_provisioning_client_sas.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\platform\az_curl.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\platform\az_win32.c" />
+    <ClCompile Include="..\azure-sdk-for-c\sdk\src\azure\storage\az_storage_blobs_blob_client.c" />
     <ClCompile Include="HubBlobUpload.c" />
     <ClCompile Include="sas.c" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_config.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_context.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_credentials.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_http.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_http_transport.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_json.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_log.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_platform.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_precondition.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_result.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_span.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\inc\az_version.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_config_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_credentials_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_http_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_log_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_precondition_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_retry_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_span_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\internal\az_spinlock_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_aad_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_credential_token_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_hex_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_header_validation_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_logging_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_policy_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_http_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_json_string_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\core\az_core\src\az_span_private.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\iot\common\inc\az_iot_common.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\iot\common\inc\az_iot_common_internal.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\iot\hub\inc\az_iot_hub_client.h" />
-    <ClInclude Include="..\azure-sdk-for-c\sdk\storage\blobs\inc\az_storage_blobs.h" />
+    <ClInclude Include="..\azure-sdk-for-c\sdk\src\azure\core\az_hex_private.h" />
+    <ClInclude Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_header_validation_private.h" />
+    <ClInclude Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_policy_logging_private.h" />
+    <ClInclude Include="..\azure-sdk-for-c\sdk\src\azure\core\az_http_private.h" />
+    <ClInclude Include="..\azure-sdk-for-c\sdk\src\azure\core\az_json_private.h" />
+    <ClInclude Include="..\azure-sdk-for-c\sdk\src\azure\core\az_span_private.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\azure-sdk-for-c\sdk\src\azure\core\CMakeLists.txt" />
+    <Text Include="..\azure-sdk-for-c\sdk\src\azure\iot\CMakeLists.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
